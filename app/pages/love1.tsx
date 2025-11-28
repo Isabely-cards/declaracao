@@ -103,7 +103,7 @@ export default function Love1() {
           </div>
         </header>
 
-        <section className="relative h-[70vh] sm:h-[68vh] md:h-[72vh]">
+        <section className="relative min-h-[100vh] md:h-[72vh]">
           <AnimatePresence initial={false} mode="wait">
             <motion.div
               key={slides[index].id}
@@ -111,25 +111,31 @@ export default function Love1() {
               animate={{ opacity: 1, x: 0, scale: 1 }}
               exit={{ opacity: 0, x: -50, scale: 0.98 }}
               transition={{ duration: 0.6 }}
-              className="absolute inset-0 p-4 flex flex-col md:flex-row items-center gap-6"
+              className="p-4 flex flex-col md:flex-row items-center gap-6 md:absolute md:inset-0"
             >
               <motion.figure
                 layout
-                className="flex-1 max-w-xl w-full rounded-xl overflow-hidden shadow-lg bg-white/60 border border-violet-100"
+                className="w-full md:flex-1 md:max-w-xl rounded-xl overflow-hidden shadow-lg bg-white/60 border border-violet-100"
                 whileHover={{ scale: 1.02 }}
               >
-                <div className="relative h-56 sm:h-72 md:h-full md:min-h-[360px]">
+                <div className="w-full">
                   <img
                     src={slides[index].image}
-                    alt={`${slides[index].title} photo`}
-                    className="object-contain w-full h-full"
+                    alt={`${slides[index].title} foto`}
+                    className="w-full h-auto object-contain"
                   />
                 </div>
+
                 <figcaption className="p-4">
-                  <h2 className="text-xl font-semibold text-violet-700">{slides[index].title}</h2>
-                  <p className="text-sm text-indigo-500 mt-1">{slides[index].subtitle}</p>
+                  <h2 className="text-xl font-semibold text-violet-700">
+                    {slides[index].title}
+                  </h2>
+                  <p className="text-sm text-indigo-500 mt-1">
+                    {slides[index].subtitle}
+                  </p>
                 </figcaption>
               </motion.figure>
+
 
               <div className="flex-1 p-2 md:p-6 flex flex-col justify-center gap-4">
                 <motion.h3 className="text-2xl md:text-3xl font-extrabold text-indigo-700">
