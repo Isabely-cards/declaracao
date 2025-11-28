@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@keyframes floatHeart {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.animate-float-heart {
+  animation: floatHeart 4s ease-in-out infinite;
+}
+
+.animate-fade-in {
+  animation: fadeIn 2s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+:root {
+  --romanticPink: #ffccd5;
+  --romanticRed: #ff4d6d;
+  --romanticPurple: #c084fc;
+}
